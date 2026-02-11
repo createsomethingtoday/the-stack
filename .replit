@@ -1,0 +1,19 @@
+run = "npm run dev"
+entrypoint = "src/routes/+page.svelte"
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+PATH = "/home/runner/$REPL_SLUG/node_modules/.bin:$PATH"
+
+[languages]
+[languages.javascript]
+pattern = "**/*.{js,ts,svelte}"
+
+[languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
+[[ports]]
+localPort = 5173
+externalPort = 80
